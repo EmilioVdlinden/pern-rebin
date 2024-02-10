@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { IoMdCheckmark } from "react-icons/io";
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import { baseURL } from '../../config';
+
 
 const ResetPassword = () => {
 
@@ -21,7 +23,7 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
 
-      const response = await axios.post(`http://localhost:5000/password/reset/${user_id}/${token}`, {"password": inputs.newPassword});
+      const response = await axios.post(`${baseURL}password/reset/${user_id}/${token}`, {"password": inputs.newPassword});
       if(response.data.update){
         setUpdated(true);
       }

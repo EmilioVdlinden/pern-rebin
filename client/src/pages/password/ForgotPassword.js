@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { GoMail } from "react-icons/go";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { baseURL } from '../../config';
 
 const ForgotPassword = () => {
 
@@ -21,7 +22,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     try {
       console.log(inputs);
-      const response = await axios.post('http://localhost:5000/password/forgot', inputs);
+      const response = await axios.post(`${baseURL}password/forgot`, inputs);
       setMailSent(true);
       
     } catch (err) {
