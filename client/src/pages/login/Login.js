@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Checkbox from '../../components/Checkbox';
-import { baseURL } from '../../config';
+
 
 const Login = ({setIsAuthenticated}) => {
 
@@ -19,7 +19,7 @@ const Login = ({setIsAuthenticated}) => {
     e.preventDefault();
     try {
 
-      const response = await axios.post(`${baseURL}auth/login`, inputs);
+      const response = await axios.post("/auth/login", inputs);
       localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
       

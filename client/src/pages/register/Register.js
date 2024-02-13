@@ -1,7 +1,7 @@
 import {React, useState} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import { baseURL } from '../../config';
+
 
 
 const Register = ({setIsAuthenticated}) => {
@@ -20,7 +20,7 @@ const Register = ({setIsAuthenticated}) => {
     e.preventDefault();
     try {
   
-      const response = await axios.post(`${baseURL}auth/register`, inputs);
+      const response = await axios.post("/auth/register", inputs);
       localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
       

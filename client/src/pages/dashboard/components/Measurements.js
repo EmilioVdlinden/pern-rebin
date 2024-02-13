@@ -1,5 +1,4 @@
 import {React, useState, useEffect} from 'react';
-//import axios from 'axios';
 import Toggle from './Toggle';
 import DataTable from 'react-data-table-component';
 import { getTableData } from '../../../api/StatisticsApi';

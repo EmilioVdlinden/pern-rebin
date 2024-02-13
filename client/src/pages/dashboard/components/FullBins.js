@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import axios from 'axios';
 import { PiTrash } from "react-icons/pi";
 import { getFullBins } from '../../../api/StatisticsApi';
 

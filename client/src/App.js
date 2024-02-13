@@ -6,7 +6,7 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import ForgotPassword from './pages/password/ForgotPassword';
 import ResetPassword from './pages/password/ResetPassword';
-import { baseURL } from './config';
+
 
 
 
@@ -14,12 +14,11 @@ import { baseURL } from './config';
 function App() {
  
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [customer_id, setCustomer_id] = useState('');
 
   async function isAuth() {
     try {
 
-      const response = await axios.get(`${baseURL}auth/verify`, {headers: {token: localStorage.token}});
+      const response = await axios.get("/auth/verify", {headers: {token: localStorage.token}});
       response.data === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
       
     } catch (err) {
